@@ -1,0 +1,15 @@
+---
+title: "RoundDataFrame"
+author: "Liu;Luxia"
+date: "October 17, 2016"
+output: github_document
+---
+
+```{r}
+round_df <- function(x, digits=4) {
+  numeric_columns <- sapply(x, class) == 'numeric'
+  x[numeric_columns] <-  round(x[numeric_columns], digits)
+  x
+}
+```
+
